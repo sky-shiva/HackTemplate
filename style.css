@@ -1,0 +1,235 @@
+#shiva-hacked-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    background: #000 !important;
+
+    color: red !important;
+
+    z-index: 2147483647 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-family: "Courier New", monospace !important;
+
+    overflow: hidden !important;
+
+    animation: shivaAppear 0.5s ease-out forwards;
+}
+
+
+.hacked-container {
+    position: relative;
+
+    width: 90%;
+    max-width: 1000px;
+
+    text-align: center;
+
+    animation: shivaEnter 1s cubic-bezier(.16,1,.3,1);
+}
+
+
+.warning {
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+
+    animation: shivaFlicker 0.8s infinite;
+}
+
+
+.main-title {
+    font-family: Impact, "Arial Black", sans-serif;
+
+    font-size: clamp(50px, 10vw, 130px);
+
+    font-weight: 900;
+
+    letter-spacing: 8px;
+
+    color: red;
+
+    text-shadow:
+        0 0 5px red,
+        0 0 20px red,
+        0 0 50px red;
+
+    animation: shivaGlitch 1.5s infinite;
+}
+
+
+.subtitle {
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    letter-spacing: 6px;
+
+    color: #ff5555;
+}
+
+
+.terminal {
+    margin: 40px auto;
+
+    padding: 20px;
+
+    max-width: 600px;
+
+    text-align: left;
+
+    border-left: 3px solid red;
+
+    background: rgba(255,0,0,0.08);
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+.success {
+    color: red;
+
+    font-weight: bold;
+
+    animation: shivaFlicker 0.7s infinite;
+}
+
+
+.progress-container {
+    width: 80%;
+
+    max-width: 600px;
+
+    height: 12px;
+
+    border: 1px solid red;
+
+    margin: 30px auto;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    background: red;
+
+    box-shadow: 0 0 20px red;
+
+    animation: shivaProgress 5s linear forwards;
+}
+
+
+.status {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.8;
+}
+
+
+/* SCANLINES */
+
+.scanlines {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.04) 0px,
+        rgba(255,255,255,0.04) 1px,
+        transparent 1px,
+        transparent 5px
+    );
+}
+
+
+/* ANIMATIONS */
+
+@keyframes shivaAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes shivaEnter {
+
+    from {
+        transform: scale(0.5);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes shivaProgress {
+
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes shivaGlitch {
+
+    0%, 90%, 100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(-10px, 4px);
+    }
+
+    94% {
+        transform: translate(10px, -4px);
+    }
+
+    96% {
+        transform: translate(-5px, 2px);
+    }
+}
+
+
+@keyframes shivaFlicker {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}

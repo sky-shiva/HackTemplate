@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Shiva Visual Demo",
+    "version": "1.0",
+    "description": "Shiva visual demo for Mentorpick",
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://mentorpick.com/*",
+                "https://www.mentorpick.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "style.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
